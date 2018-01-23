@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <script src="../jquery/jquery-3.2.1.min.js"></script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="text-center col-sm-12"><h1>Hello Linux</h1></div>
+
+    <div id="qrShow" class="row text-center" style="display: none;">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">QQ二维码</h3>
+                </div>
+                <div class="panel-body">
+                    <img src="../upload/local/authorQQ.JPG" alt="1376477341" class="img-thumbnail">
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
+    </div>
+
+    <div id="operation" class="text-center">
+        <button type="button" class="btn btn-success" onclick="javascript:window.location.href='http://www.baidu.com'">打开百度</button><br>
+        <button id="qrCode" type="button" class="btn btn-danger" style="margin-top: 10px;">QQ二维码</button>
+    </div>
+</body>
+<script>
+    $(function(){
+       $("#qrCode").on('click',function(){
+           $("#operation").fadeToggle();
+           $("#qrShow").slideToggle("slow");
+       });
+        $("#qrShow").on('click',function(){
+            $("#operation").fadeToggle();
+            $("#qrShow").slideToggle();
+        });
+
+    });
+</script>
+</html>
